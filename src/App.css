@@ -55,6 +55,11 @@
   position: relative;
 }
 
+.post-it-note:hover {
+  opacity: 0.25;
+  background: grey;
+}
+
 .post-it-note-content {
   transform: rotate(-15deg);
   width: 200px;

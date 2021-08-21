@@ -10,7 +10,7 @@ const Post = (props) => {
             <>
                 <div className="post-it-note">
                     <p className="post-it-note-content">{props.note.content}</p>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button className="show" onClick={handleDelete}>Delete</button>
                     <div className="box high">High</div>
                 </div>
                 
@@ -22,7 +22,7 @@ const Post = (props) => {
             <>
                 <div className="post-it-note">
                     <p className="post-it-note-content">{props.note.content}</p>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button className="show" onClick={handleDelete}>Delete</button>
                     <div className="box med">Med</div>                
                 </div>
             </>
@@ -32,7 +32,7 @@ const Post = (props) => {
             <>
                 <div className="post-it-note">
                     <p className="post-it-note-content">{props.note.content}</p>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button className="show" onClick={handleDelete}>Delete</button>
                     <div className="box low">Low</div>                
                 </div>
             </>

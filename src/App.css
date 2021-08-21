@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+.post-array {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+}
+
+.post-it-note {
+  background: #f3e779;
+  min-width: 200px;
+  min-height: 200px;
+  padding: 10px;
+  margin: 10px;
+  font-family: cursive;
+  font-size: 30px;
+  text-align: center;
+}
+
+.post-it-note-content {
+  transform: rotate(-15deg);
+  width: 200px;
+  text-align: center;
+}
+
+.importance {
+  
+}

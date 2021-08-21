@@ -1,7 +1,3 @@
-function ColorImportance(props){
-    document.querySelector('.post-it-note-content').style.color = 'red'
-}
-
 const Post = (props) => {
     const imp = props.note.importance
   
@@ -10,11 +6,12 @@ const Post = (props) => {
             <>
                 <div className="post-it-note">
                     <p className="post-it-note-content">{props.note.content}</p>
+                    <p className="post-it-note-content red">{props.note.importance}</p>
                 </div>
-                <ColorImportance importance={imp}/>;
+                
             </>
         )
-
+    
     } else {
         return (
             <>

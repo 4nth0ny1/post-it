@@ -59,3 +59,8 @@
   width: 200px;
   text-align: center;
 }
+
+.red {
+  color: red;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}

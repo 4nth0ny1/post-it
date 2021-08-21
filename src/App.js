@@ -28,9 +28,14 @@ function App() {
     },
   ]
 
+  const sortClick = (e) => {
+    
+  }
+
   return (
     <>
       <h1>Post It</h1>
+      <button onClick={sortClick}>Sort</button>
       <PostContainer notes={notes} />
     </>
   );
@@ -39,4 +44,3 @@ function App() {
 export default App;
 
 
-//post it notes color code #f3e779

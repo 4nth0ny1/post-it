@@ -44,6 +44,13 @@ function App() {
     },
   ])
 
+  const deleteNote = (noteId) => {
+    const filteredNotes = notes.filter(note => {
+      return note.id !== noteId
+    })
+    setNotes(filteredNotes)
+  }
+
 
   const handleClick = () => {
       const sortedNotes = notes.sort( function (a,b) {
@@ -56,7 +63,7 @@ function App() {
     <>
       <h1>Post It</h1>
       <button onClick={handleClick}>Sort</button>
-      <PostContainer notes={notes} />
+      <PostContainer notes={notes} deleteNote={deleteNote} />
     </>
   );
 }

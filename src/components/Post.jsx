@@ -1,11 +1,16 @@
 const Post = (props) => {
     const imp = props.note.importance
+
+    const handleDelete = (e) => {
+        props.deleteNote(props.note.id)
+    }
   
     if (imp === 3){
         return (
             <>
                 <div className="post-it-note">
                     <p className="post-it-note-content">{props.note.content}</p>
+                    <button onClick={handleDelete}>Delete</button>
                     <div className="box high">High</div>
                 </div>
                 
@@ -17,6 +22,7 @@ const Post = (props) => {
             <>
                 <div className="post-it-note">
                     <p className="post-it-note-content">{props.note.content}</p>
+                    <button onClick={handleDelete}>Delete</button>
                     <div className="box med">Med</div>                
                 </div>
             </>
@@ -26,6 +32,7 @@ const Post = (props) => {
             <>
                 <div className="post-it-note">
                     <p className="post-it-note-content">{props.note.content}</p>
+                    <button onClick={handleDelete}>Delete</button>
                     <div className="box low">Low</div>                
                 </div>
             </>

@@ -53,7 +53,7 @@ function App() {
 
 
   const handleClick = () => {
-      const sortedNotes = notes.sort( function (a,b) {
+      const sortedNotes = [...notes].sort( function (a,b) {
         return b.importance - a.importance
       })
       setNotes(sortedNotes)

@@ -81,8 +81,18 @@ function App() {
     <>
       <h1>Post It</h1>
       <PostForm addNote={addNote} findNextId={findNextId} />
-      <button onClick={sortImportanceClick}>Sort by Importance</button>
-      <button onClick={sortById}>Sort by Newest</button>
+      <div className="sort-button-group">
+        <div className="dropdown">
+          <button onClick="myFunction()" className="dropbtn">Sort ↓</button>
+          <div id="myDropdown" className="dropdown-content">
+            <div onClick={sortImportanceClick}>Importance</div>
+            <div onClick={sortById}>Newest</div>
+          </div>
+        </div>
+
+        <button onClick={sortImportanceClick}>Sort by Importance</button>
+        <button onClick={sortById}>Sort by Newest</button>
+      </div>
       <PostContainer notes={notes} deleteNote={deleteNote} />
     </>
   );

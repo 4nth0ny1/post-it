@@ -125,8 +125,10 @@
   padding: 0 15px 0 0;
 }
 
-div.sort-button-group {
-  margin: 10px;
+.sort-button-group {
+  display: flex;
+  justify-content: left;
+  margin-left: 10px;
 }
 
 .app-title {
@@ -153,5 +155,15 @@ div.sort-button-group {
 }
 
 .button-group-for-create-form > div {
+  margin-left: 10px;
+}
+
+.hidden-sort {
+  display: none;
+}
+
+.show-sort-button {
+  display: inline-block;
+  justify-content: flex-start;
   margin-left: 10px;
 }

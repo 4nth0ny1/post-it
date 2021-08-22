@@ -77,13 +77,21 @@ function App() {
       return countedNotes
   }
 
+
+  const [ sortOpen, setSortToggle ] = useState('false');
+
+  const handleSortToggle = () => {
+    setSortToggle(!sortOpen);
+  }
+
   return (
     <>
       <h1 className="app-title">Post It</h1>
       <PostForm addNote={addNote} findNextId={findNextId} />
       <div className="sort-button-group">
-        <button onClick={sortImportanceClick}>Sort by Importance</button>
-        <button onClick={sortById}>Sort by Newest</button>
+        <button onClick={handleSortToggle}>Sorts</button>
+        <button className={sortOpen ? 'hidden-sort' : 'show-sort-button'} onClick={sortImportanceClick}>Sort by Importance</button>
+        <button className={sortOpen ? 'hidden-sort' : 'show-sort-button'} onClick={sortById}>Sort by Newest</button>
       </div>
       <PostContainer notes={notes} deleteNote={deleteNote} />
     </>

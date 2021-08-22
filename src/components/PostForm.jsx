@@ -40,7 +40,7 @@ class PostForm extends Component {
                     <label htmlFor="importance"></label>
                     <input type="number"  className="form-input" placeholder="importance 1,2,3" onChange={onChange} name="importance" id="importance" />
                     <label htmlFor="id"></label>
-                    <input type="number" className="form-input" onChange={onChange} name="id" id="id" value={addNewId}/>
+                    <input type="number" className="form-input" onChange={onChange} name="id" id="id" placeholder={addNewId}/>
                     <button type="submit">Post It</button>
                 </form>
             </div>

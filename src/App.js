@@ -79,7 +79,7 @@ function App() {
 
   return (
     <>
-      <h1>Post It</h1>
+      <h1 className="app-title">Post It</h1>
       <PostForm addNote={addNote} findNextId={findNextId} />
       <div className="sort-button-group">
         <div className="dropdown">

@@ -50,13 +50,12 @@ class PostForm extends Component {
                     <input type="number"  className="form-input" placeholder="importance 1-3" onChange={onChange} min="1" max="3" name="importance" id="importance" />
                     <label htmlFor="id"></label>
                     <input type="number" className="form-input" onChange={onChange} name="id" id="id" value={addNewId()} />
-                    <button type="submit">Post It</button>
-                    <div className="reset-button" onClick={handleReset}>Reset</div>
+                    <div className="button-group-for-create-form">
+                        <button className="reset-button" type="submit">Post It</button>
+                        <div className="reset-button" onClick={handleReset}>Reset</div>
+                    </div>
                 </form>
-                
             </div>
-            
-
             </>
         )
     }

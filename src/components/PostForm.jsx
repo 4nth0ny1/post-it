@@ -29,6 +29,15 @@ class PostForm extends Component {
         const addNewId = () => {
             return this.props.findNextId()
         }
+
+        const handleReset = (event) => {
+            Array.from(document.querySelectorAll("input")).forEach(
+                input => (input.value = "")
+            )
+            this.setState({
+                [event.target.name]: [{}]
+            })
+        }
     
 
         return (
@@ -42,8 +51,12 @@ class PostForm extends Component {
                     <label htmlFor="id"></label>
                     <input type="number" className="form-input" onChange={onChange} name="id" id="id" value={addNewId()} />
                     <button type="submit">Post It</button>
+                    <div className="reset-button" onClick={handleReset}>Reset</div>
                 </form>
+                
             </div>
+            
+
             </>
         )
     }

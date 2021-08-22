@@ -67,13 +67,12 @@ function App() {
     setNotes(sortedNotes)
   }
 
-  const addNote = (note) => {
-    const newNotes = [...notes, note]
+  const addNote = (note) => {   // unclear about this. where does (note) come from 
+    const newNotes = [...notes, note]  //what does this mean? 
     setNotes(newNotes)
   }
 
   const findNextId = () => {
-    
     const countedNotes = [...notes].length + 1
       return countedNotes
   }
@@ -83,14 +82,6 @@ function App() {
       <h1 className="app-title">Post It</h1>
       <PostForm addNote={addNote} findNextId={findNextId} />
       <div className="sort-button-group">
-        <div className="dropdown">
-          <button onClick="myFunction()" className="dropbtn">Sort ↓</button>
-          <div id="myDropdown" className="dropdown-content">
-            <div onClick={sortImportanceClick}>Importance</div>
-            <div onClick={sortById}>Newest</div>
-          </div>
-        </div>
-
         <button onClick={sortImportanceClick}>Sort by Importance</button>
         <button onClick={sortById}>Sort by Newest</button>
       </div>

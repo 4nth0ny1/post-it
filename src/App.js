@@ -73,7 +73,8 @@ function App() {
   }
 
   const findNextId = () => {
-    const countedNotes = [...notes].count + 1
+    
+    const countedNotes = [...notes].length + 1
       return countedNotes
   }
 

@@ -39,7 +39,6 @@ class PostForm extends Component {
             })
         }
     
-
         return (
             <>
             <div className="post-it-note-form">

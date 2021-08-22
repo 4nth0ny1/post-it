@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import PostContainer from './components/PostContainer';
 import { useState } from 'react';
+import PostForm from './components/PostForm'
 
 function App() {
 
@@ -52,17 +53,31 @@ function App() {
   }
 
 
-  const handleClick = () => {
+  const sortImportanceClick = () => {
       const sortedNotes = [...notes].sort( function (a,b) {
         return b.importance - a.importance
       })
       setNotes(sortedNotes)
   }
 
+  const sortById = () => {
+    const sortedNotes = [...notes].sort( function (a,b) {
+      return b.id - a.id
+    })
+    setNotes(sortedNotes)
+  }
+
+  const addNote = (note) => {
+    const newNotes = [...notes, note]
+    setNotes(newNotes)
+  }
+
   return (
     <>
       <h1>Post It</h1>
-      <button onClick={handleClick}>Sort</button>
+      <PostForm addNote={addNote} />
+      <button onClick={sortImportanceClick}>Sort by Importance</button>
+      <button onClick={sortById}>Sort by Newest</button>
       <PostContainer notes={notes} deleteNote={deleteNote} />
     </>
   );

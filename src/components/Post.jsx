@@ -1,4 +1,5 @@
 const Post = (props) => {
+    
     const imp = props.note.importance
 
     const handleDelete = (e) => {

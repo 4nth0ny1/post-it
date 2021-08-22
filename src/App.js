@@ -72,10 +72,16 @@ function App() {
     setNotes(newNotes)
   }
 
+  const findNextId = () => {
+    const notes = [...notes].count
+      return notes
+      console.log(notes)
+  }
+
   return (
     <>
       <h1>Post It</h1>
-      <PostForm addNote={addNote} />
+      <PostForm addNote={addNote} findNextId={findNextId} />
       <button onClick={sortImportanceClick}>Sort by Importance</button>
       <button onClick={sortById}>Sort by Newest</button>
       <PostContainer notes={notes} deleteNote={deleteNote} />

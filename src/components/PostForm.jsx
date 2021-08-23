@@ -8,26 +8,24 @@ class PostForm extends Component {
             content: '', 
             id: '',
             importance: ''
-           
         }
     }
 
     render() {
-        
-
         const onChange = (event) => {
             this.setState({
                 [event.target.name]: event.target.value
             })
         }  
+
+        const addNewId = () => {
+            return this.props.findNextId(this.state)
+        }
         
         const handleSubmit = (event) => {
             event.preventDefault()
             this.props.addNote(this.state)
-        }
-
-        const addNewId = () => {
-            return this.props.findNextId()
+            
         }
 
         const handleReset = (event) => {
@@ -46,9 +44,9 @@ class PostForm extends Component {
                     <label htmlFor="content"></label>
                     <input className="form-input" type="text" placeholder="note" onChange={onChange} name="content" id="content" />
                     <label htmlFor="importance"></label>
-                    <input type="number"  className="form-input" placeholder="importance 1-3" onChange={onChange} min="1" max="3" name="importance" id="importance" />
+                    <input type="number" className="form-input" placeholder="importance 1-3" onChange={onChange} min="1" max="3" name="importance" id="importance" />
                     <label htmlFor="id"></label>
-                    <input type="number" className="form-input" onChange={onChange} name="id" id="id" value={addNewId()} />
+                    <input type="number" className="form-input" onChange={onChange} name="id" id={addNewId()} value={addNewId()} />
                     <div className="button-group-for-create-form">
                         <button className="reset-button" type="submit">Post It</button>
                         <div className="reset-button" onClick={handleReset}>Reset</div>

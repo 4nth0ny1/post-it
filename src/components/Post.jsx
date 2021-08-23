@@ -6,7 +6,7 @@ const Post = (props) => {
         props.deleteNote(props.note.id)
     }
   
-    if (imp === 3){
+    if (parseInt(imp) === 3){
         return (
             <>
                 <div className="post-it-note">
@@ -18,7 +18,7 @@ const Post = (props) => {
             </>
         )
     
-    } else if (imp === 2) {
+    } else if (parseInt(imp) === 2) {
         return (
             <>
                 <div className="post-it-note">

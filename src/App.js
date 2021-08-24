@@ -7,41 +7,41 @@ import PostForm from './components/PostForm'
 function App() {
 
   const [ notes, setNotes ] = useState([
-    // {
-    //   id: 1,
-    //   content: 'take out the trash',
-    //   importance: 3
-    // },
-    // {
-    //   id: 2,
-    //   content: 'learn about react',
-    //   importance: 2
-    // },
-    // {
-    //   id: 3,
-    //   content: 'vacuum', 
-    //   importance: 1
-    // },
-    // {
-    //   id: 4,
-    //   content: 'talk to mom',
-    //   importance: 3
-    // },
-    // {
-    //   id: 5,
-    //   content: 'sing a song', 
-    //   importance: 3
-    // },
-    // {
-    //   id: 6,
-    //   content: 'wash dishes', 
-    //   importance: 2
-    // },
-    // {
-    //   id: 7,
-    //   content: 'read', 
-    //   importance: 1
-    // },
+    {
+      id: 1,
+      content: 'take out the trash',
+      importance: 3
+    },
+    {
+      id: 2,
+      content: 'learn about react',
+      importance: 2
+    },
+    {
+      id: 3,
+      content: 'vacuum', 
+      importance: 1
+    },
+    {
+      id: 4,
+      content: 'talk to mom',
+      importance: 3
+    },
+    {
+      id: 5,
+      content: 'sing a song', 
+      importance: 3
+    },
+    {
+      id: 6,
+      content: 'wash dishes', 
+      importance: 2
+    },
+    {
+      id: 7,
+      content: 'read', 
+      importance: 1
+    },
   ])
 
   const deleteNote = (noteId) => {
@@ -82,9 +82,25 @@ function App() {
     setSortToggle(!sortOpen);
   }
 
+  const [ dropDown, setDropDown ] = useState('false');
+
+  const handleDropDown = () => {
+    setDropDown(!dropDown)
+  }
+
   return (
     <>
-      <h1 className="app-title">Post It</h1>
+      <div className="title-heading-div">
+        <h1 className="app-title">Post It</h1>
+        <div className="drop-down-button-group">
+          <div className="drop-down-button" onClick={handleSortToggle} onClick={handleDropDown}>Sort ➜</div>
+          <div className={dropDown ? 'collapsed-drop-down' : 'open-drop-down'}>
+            <div className="sort-options" onClick={sortImportanceClick}>Sort by Importance</div>
+            <div className="sort-options" onClick={sortById}>Sort by Newest</div>
+          </div>
+        </div>
+      </div>
+
       <PostForm addNote={addNote} findNextId={findNextId} />
 
       <div className="sort-button-group">

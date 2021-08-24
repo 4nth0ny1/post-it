@@ -167,3 +167,32 @@
   justify-content: flex-start;
   margin-left: 10px;
 }
+
+.drop-down-button-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.drop-down-button {
+  border: 1px solid black;
+  background: #2980b9;
+  width: 50px;
+  height: 20px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.collapsed-drop-down {
+  display: none;
+}
+
+.open-drop-down {
+  border: 1px solid #2980b9;
+  width: 200px;
+  height: 100px;
+  margin-left: 2px;
+  border-radius: 10px;
+  padding: 10px;
+}

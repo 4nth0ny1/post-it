@@ -42,7 +42,7 @@ class PostForm extends Component {
             <div className="post-it-note-form">
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="content"></label>
-                    <input className="form-input" type="text" placeholder="note" onChange={onChange} name="content" id="content" />
+                    <input className="form-input" type="text" placeholder="note" onChange={onChange} maxlength="30" name="content" id="content" />
                     <label htmlFor="importance"></label>
                     <input type="number" className="form-input" placeholder="importance 1-3" onChange={onChange} min="1" max="3" name="importance" id="importance" />
                     <label htmlFor="id"></label>

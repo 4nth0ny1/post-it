@@ -72,6 +72,7 @@
   padding: 10px;
   border: none;
   min-width: 150px;
+  overflow-wrap: break-word;
 }
 
 .delete-show {
@@ -101,6 +102,7 @@
   transform: rotate(-15deg);
   width: 200px;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .box {
@@ -136,17 +138,26 @@
 }
 
 .reset-button {
+  min-width: 60px;
   max-width: 50px;
-  border: 1px solid black;
-  background: rgb(233, 231, 231);
-  border-radius: 2px;
+  border: 1px solid #2980b9;
+  border-radius: 10px;
+  background: #2980b9;
+  color: white;
+  border-radius: 10px;
   font-size: 14px;
-  padding: 3px;
+  padding: 5px;
+}
+
+.reset-button:hover {
+  background: white;
+  color: #2980b9;
 }
 
 .reset-button > div {
   cursor: pointer;
   padding: 0 30px 0 30px;
+  background: #2980b9;
 }
 
 .button-group-for-create-form {

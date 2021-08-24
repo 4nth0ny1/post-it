@@ -89,7 +89,7 @@
 }
 
 .post-it-note:hover {
-  background: grey;
+  background: rgb(63, 63, 63);
 }
 
 .post-it-note:hover .delete-show {

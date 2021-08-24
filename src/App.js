@@ -51,7 +51,6 @@ function App() {
     setNotes(filteredNotes)
   }
 
-
   const sortImportanceClick = () => {
       const sortedNotes = [...notes].sort( function (a,b) {
         return b.importance - a.importance
@@ -92,21 +91,18 @@ function App() {
     <>
       <div className="title-heading-div">
         <h1 className="app-title">Post It</h1>
-        <div className="drop-down-button-group">
-          <div className="drop-down-button" onClick={handleSortToggle} onClick={handleDropDown}>Sort ➜</div>
+      </div>
+
+      <PostForm addNote={addNote} findNextId={findNextId} />
+
+      <div className="drop-down-button-group">
+        <div className="drop-down-button" onClick={handleSortToggle} onClick={handleDropDown}>Sort ➜</div>
+        <div className="sort-group-row">
           <div className={dropDown ? 'collapsed-drop-down' : 'open-drop-down'}>
             <div className="sort-options" onClick={sortImportanceClick}>Sort by Importance</div>
             <div className="sort-options" onClick={sortById}>Sort by Newest</div>
           </div>
         </div>
-      </div>
-
-      <PostForm addNote={addNote} findNextId={findNextId} />
-
-      <div className="sort-button-group">
-        <button onClick={handleSortToggle}>Sorts</button>
-        <button className={sortOpen ? 'hidden-sort' : 'show-sort-button'} onClick={sortImportanceClick}>Sort by Importance</button>
-        <button className={sortOpen ? 'hidden-sort' : 'show-sort-button'} onClick={sortById}>Sort by Newest</button>
       </div>
 
       <PostContainer notes={notes} deleteNote={deleteNote} />
